@@ -10,7 +10,7 @@ const KakaoAdfit2 = () => {
     scr.async = 'true';
     scr.type = 'text/javascript';
     scr.src = '//t1.daumcdn.net/kas/static/ba.min.js';
-    ins.setAttribute('data-ad-unit', 'DAN-B3Uag3fsYdvB5bgu');
+    ins.setAttribute('data-ad-unit', 'DAN-HSJexwFgWaiTpSyY');
     ins.setAttribute('data-ad-width', '160');
     ins.setAttribute('data-ad-height', '600');
     document.querySelector('.adfit2').appendChild(ins);

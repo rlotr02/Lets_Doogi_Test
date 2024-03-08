@@ -12,6 +12,7 @@ import ResultLeft from '../components/ResultLeft';
 import KakaoAdfit1 from '../assets/KakaoAdfit/KakaoAdfit1';
 import KakaoAdfit2 from '../assets/KakaoAdfit/KakaoAdfit2';
 import KakaoAdfit3 from '../assets/KakaoAdfit/KakaoAdfit3';
+import Information from '../components/Information';
 
 const ResultPage: React.FC = () => {
   const setPage = useSetRecoilState(pageState);
@@ -67,80 +68,83 @@ const ResultPage: React.FC = () => {
   }, [result]);
 
   return (
-    <Container>
-      <div>
-        {result === 7 ? (
-          <>
-            <p>
-              당신은 두기의 유혹을 모두 피했습니다.
-              <br />
-              당신은...
-            </p>
-            <ResultRight
-              text="내가 두기가 된다면?"
-              img={TRUE_RESULT_IMAGES[0]}
-              delay="1s"
-            />
-            <ResultLeft
-              text="내가 두기가 된다면?"
-              img={TRUE_RESULT_IMAGES[1]}
-              delay="2s"
-            />
-            <ResultRight
-              text="내가 두기가 된다면?"
-              img={TRUE_RESULT_IMAGES[2]}
-              delay="3s"
-            />
-            <ResultLeft
-              text="내가 두기가 된다면?"
-              img={TRUE_RESULT_IMAGES[3]}
-              delay="4s"
-            />
-            <ResultRight
-              text="내가 두기가 된다면?"
-              img={TRUE_RESULT_IMAGES[4]}
-              delay="5s"
-            />
-            <ResultLeft
-              text="내가 두기가 된다면?"
-              img={TRUE_RESULT_IMAGES[5]}
-              delay="6s"
-            />
-            <Text>모든 두기의 왕 "두기가되"</Text>
-          </>
-        ) : (
-          <>
-            <SelectRight text1="내가 두기가 된다면?" />
-            <SelectLeft text2={ResultJson[result - 1].toString()} />
-          </>
-        )}
-        <Img
-          src={RESULT_IMAGES[result - 1]}
-          alt={ResultJson[result - 1].toString()}
-          $result={result}
-        />
-        <ImgDownload
-          href={RESULT_IMAGES[result - 1]}
-          download={ResultJson[result - 1].toString()}
-          $result={result}
-        >
-          두기 저장하기
-        </ImgDownload>
-        <Button
-          text="다른 두기 되러 가기"
-          onClick={() => {
-            setPage(0);
-          }}
-        />
-        <KakaoAdfit3 />
-      </div>
-      <KakaoAdfitDiv1>
-        <KakaoAdfit1 />
-      </KakaoAdfitDiv1>
-      <KakaoAdfitDiv2>
-        <KakaoAdfit2 />
-      </KakaoAdfitDiv2>
-    </Container>
+    <>
+      <Container>
+        <div>
+          {result === 7 ? (
+            <>
+              <p>
+                당신은 두기의 유혹을 모두 피했습니다.
+                <br />
+                당신은...
+              </p>
+              <ResultRight
+                text="내가 두기가 된다면?"
+                img={TRUE_RESULT_IMAGES[0]}
+                delay="1s"
+              />
+              <ResultLeft
+                text="내가 두기가 된다면?"
+                img={TRUE_RESULT_IMAGES[1]}
+                delay="2s"
+              />
+              <ResultRight
+                text="내가 두기가 된다면?"
+                img={TRUE_RESULT_IMAGES[2]}
+                delay="3s"
+              />
+              <ResultLeft
+                text="내가 두기가 된다면?"
+                img={TRUE_RESULT_IMAGES[3]}
+                delay="4s"
+              />
+              <ResultRight
+                text="내가 두기가 된다면?"
+                img={TRUE_RESULT_IMAGES[4]}
+                delay="5s"
+              />
+              <ResultLeft
+                text="내가 두기가 된다면?"
+                img={TRUE_RESULT_IMAGES[5]}
+                delay="6s"
+              />
+              <Text>모든 두기의 왕 "두기가되"</Text>
+            </>
+          ) : (
+            <>
+              <SelectRight text1="내가 두기가 된다면?" />
+              <SelectLeft text2={ResultJson[result - 1].toString()} />
+            </>
+          )}
+          <Img
+            src={RESULT_IMAGES[result - 1]}
+            alt={ResultJson[result - 1].toString()}
+            $result={result}
+          />
+          <ImgDownload
+            href={RESULT_IMAGES[result - 1]}
+            download={ResultJson[result - 1].toString()}
+            $result={result}
+          >
+            두기 저장하기
+          </ImgDownload>
+          <Button
+            text="다른 두기 되러 가기"
+            onClick={() => {
+              setPage(0);
+            }}
+          />
+          <KakaoAdfit3 />
+        </div>
+        <KakaoAdfitDiv1>
+          <KakaoAdfit1 />
+        </KakaoAdfitDiv1>
+        <KakaoAdfitDiv2>
+          <KakaoAdfit2 />
+        </KakaoAdfitDiv2>
+      </Container>
+      <Information />
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ import SelectLeft from '../components/SelectLeft';
 import KakaoAdfit1 from '../assets/KakaoAdfit/KakaoAdfit1';
 import KakaoAdfit2 from '../assets/KakaoAdfit/KakaoAdfit2';
 import KakaoAdfit3 from '../assets/KakaoAdfit/KakaoAdfit3';
+import Information from '../components/Information';
 
 const SelectPage: React.FC = () => {
   const setPage = useSetRecoilState(pageState);
@@ -24,31 +25,34 @@ const SelectPage: React.FC = () => {
   };
 
   return (
-    <Container>
-      <div>
-        <Question>
-          {QuestionJson[num].question} <br />
-          당신은 어떻게 할 것인가?
-        </Question>
-        <SelectRight
-          onClick={() => nextSlide(QuestionJson[num].answers[0].type)}
-          style={{ cursor: 'pointer' }}
-          text1={QuestionJson[num].answers[0].answer}
-        />
-        <SelectLeft
-          onClick={() => nextSlide(QuestionJson[num].answers[1].type)}
-          style={{ cursor: 'pointer' }}
-          text2={QuestionJson[num].answers[1].answer}
-        />
-        <KakaoAdfit3 />
-      </div>
-      <KakaoAdfitDiv1>
-        <KakaoAdfit1 />
-      </KakaoAdfitDiv1>
-      <KakaoAdfitDiv2>
-        <KakaoAdfit2 />
-      </KakaoAdfitDiv2>
-    </Container>
+    <>
+      <Container>
+        <div>
+          <Question>
+            {QuestionJson[num].question} <br />
+            당신은 어떻게 할 것인가?
+          </Question>
+          <SelectRight
+            onClick={() => nextSlide(QuestionJson[num].answers[0].type)}
+            style={{ cursor: 'pointer' }}
+            text1={QuestionJson[num].answers[0].answer}
+          />
+          <SelectLeft
+            onClick={() => nextSlide(QuestionJson[num].answers[1].type)}
+            style={{ cursor: 'pointer' }}
+            text2={QuestionJson[num].answers[1].answer}
+          />
+          <KakaoAdfit3 />
+        </div>
+        <KakaoAdfitDiv1>
+          <KakaoAdfit1 />
+        </KakaoAdfitDiv1>
+        <KakaoAdfitDiv2>
+          <KakaoAdfit2 />
+        </KakaoAdfitDiv2>
+      </Container>
+      <Information />
+    </>
   );
 };
 
